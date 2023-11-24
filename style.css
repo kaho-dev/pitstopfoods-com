@@ -1,0 +1,127 @@
+/*
+Theme Name:   Recipes
+Theme URI:    http://example.com/twenty-fifteen-child/
+Description:  Recipes theme based on Astra
+Author:       Kaho Chan
+Author URI:   http://example.com
+Template:     astra
+Version:      1.0.0
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+Text Domain:  Recipes Theme
+*/
+
+ol {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+a {
+    text-decoration: none;;
+}
+
+p {
+    font-family: 'Open Sans';
+}
+
+
+/***********************************************************************/
+/* HomePage */
+/***********************************************************************/
+.home__food-card:hover {
+	box-shadow: 4px 4px #da3a24;
+}
+
+.home__recent-recipes h3 {
+    font-size:20px;
+    color: #C71313;
+}
+
+.home__recent-recipes:hover {
+    box-shadow: 4px 4px #da3a24;
+}
+
+
+
+/***********************************************************************/
+/* Recipes Page */
+/***********************************************************************/
+.recipes__pagination-links a {
+    padding: 0 7px;
+}
+
+.recipes__recipe-card h3{
+    font-size: 20px;
+    color: #C71313;
+}
+
+
+.recipes__recipe-card:hover {
+    box-shadow: 4px 4px #da3a24;
+}
+
+.recipes__related img {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.recipes__related .bg-light {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.recipes__related:hover {
+    box-shadow: 4px 4px #da3a24;
+}
+
+.recipes__related h3 {
+    font-size:18px;
+    color: #C71313;
+}
+
+
+
+
+/***********************************************************************/
+/* Category Page */
+/***********************************************************************/
+
+.category__recipe-card h3 {
+    font-size:20px;
+    color: #C71313;
+}
+
+.category__recipe-card:hover {
+    box-shadow: 4px 4px #da3a24;
+}
+
+.category__recipe-card img {
+    border-radius: 8px 8px 0 0;
+}
+
+.category__card-text {
+    border-radius: 0 0 8px 8px;
+}
+
+div.swiper-button-next:after, 
+div.swiper-button-prev:after {
+    bottom: 40px;
+    position: relative;
+}
+
+.pagination__links {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.pagination__links a {
+    padding: 0 10px;
+}
