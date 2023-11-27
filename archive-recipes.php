@@ -7,9 +7,19 @@ $cats = get_recipe_categories();
 
 <div class="container">
 
-    <div class="mt-3 mb-5 text-center">
-        <h1>Recipes</h1>
-        <p>This is some description about the recipes page that I will write at some point</p>
+    <div class="mt-3 mb-5 text-left">
+        <h1 class="text-center">Recipes</h1>
+        <p>Welcome to the Pitstop Foods Recipes page, your ultimate destination for culinary inspiration. Here, we celebrate the joy of cooking by offering a diverse collection of recipes that cater to different tastes and dietary preferences.</p>
+
+        <p>Our recipes are more than just a list of ingredients and steps. They are a journey through the world of flavors, a testament to the transformative power of food, and a tribute to the cultures and traditions that have shaped our palates.</p>
+
+        <p>From hearty main courses that will impress your dinner guests, to quick and easy snacks perfect for a busy weekday, our recipes cater to all occasions. Looking for a healthy salad to kickstart your wellness journey? Or perhaps a decadent dessert to satisfy your sweet tooth? You'll find it all here.</p>
+
+        <p>We believe that everyone can cook, and our goal is to make the cooking process as enjoyable as the meal itself. That's why our recipes are easy to follow, with clear instructions and helpful tips. Whether you're a seasoned home cook or a beginner in the kitchen, our recipes will help you create delicious meals with confidence.</p>
+
+        <p>But the Pitstop Foods Recipes page is more than just a recipe collection. It's a community of food lovers. We encourage you to share your cooking experiences, exchange ideas, and learn from each other. After all, the best meals are those shared with others.</p>
+
+        <p>So go ahead, explore our recipes, ignite your culinary curiosity, and let's create delicious memories together. Happy cooking!</p>
     </div>
 
     <div class="row">
@@ -20,9 +30,7 @@ $cats = get_recipe_categories();
                 <ul class="list-group recipes__category-list">
                     <a href="http://pitstopfoods.test/recipes/" class="list-group-item list-group-item-action" >All</a>
 
-                    <?php for($i = 0; $i < count($cats); $i++): ?>
-                        <a href="<?php get_home_url() ?>/category/<?php echo $cats[$i]->name ?>" class="list-group-item list-group-item-action" ><?php echo $cats[$i]->name ?></a>
-                    <?php endfor; ?>
+                    <?php get_category_links_sidebar($cats) ?>
                 
 
                 </ul>

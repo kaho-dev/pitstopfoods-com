@@ -65,6 +65,37 @@ add_action('init',  'recipes_custom_post_type');
 
 
 
+function custom_taxonomy() {
+    $labels = array(
+        'name' => _x('Recipe Categories', 'taxonomy general name'),
+        'singular_name' => _x('Recipe Category', 'taxonomy singular name'),
+        'search_items' => __('Search Recipe Categories'),
+        'all_items' => __('All Recipe Categories'),
+        'parent_item' => __('Parent Recipe Category'),
+        'parent_item_colon' => __('Parent Recipe Category:'),
+        'edit_item' => __('Edit Recipe Category'),
+        'update_item' => __('Update Recipe Category'),
+        'add_new_item' => __('Add New Recipe Category'),
+        'new_item_name' => __('New Recipe Category Name'),
+        'menu_name' => __('Recipe Categories'),
+    );
+
+    $args = array(
+        'hierarchical' => true,  // Set this to true for categories, false for tags
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'recipe-category'),  // Customize the URL slug
+    );
+
+    register_taxonomy('recipe_category', 'recipes', $args);
+}
+
+add_action('init', 'custom_taxonomy');
+
+
+
 function my_plugin_rest_route_for_post( $route, $post ) {
     if ( $post->post_type === 'recipes' ) {
         $route = '/wp/v2/recipes/' . $post->ID;
@@ -180,6 +211,12 @@ function pagination($pages = '', $range = 4) {
 }
 
 
+/**
+ *
+ * Generate related recipes for the widget for the single-recipes page. 
+ * 
+ * @return void
+ */
 function related_recipes_widget() {
 
     $post_id = get_the_ID();
@@ -234,8 +271,41 @@ function related_recipes_widget() {
 <?php }
 
 
+/**
+ *
+ * Get all the category links for the sidebar
+ * @param array
+ * 
+ */
+function get_category_links_sidebar($categories): void {
 
-function get_recipe_categories() {
+    for($i = 0; $i < (count($categories)); $i++) {
+
+        if ($categories[$i] == null);
+
+        if ( $categories[$i]->name === 'Uncategorized' ) continue;
+
+        if ( $categories[$i]->name === 'Food' ) continue;
+
+        if ( $categories[$i]->name === null  ) continue;
+
+        echo '<a href="'. get_home_url() .'/'. strtolower( $categories[$i]->name ) 
+        .'" class="list-group-item list-group-item-action">'
+        . $categories[$i]->name .'</a>';
+
+    }
+
+
+}
+
+
+/**
+ *
+ * Return all the categories of the Recipes
+ *
+ * @return      array
+ */
+function get_recipe_categories(): array {
 
     $args = array(
         'post_type' => 'recipes',
