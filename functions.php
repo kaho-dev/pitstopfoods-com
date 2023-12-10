@@ -1,30 +1,12 @@
 <?php
 
-if ( WP_ENV === 'local') {
-    $directory = 'D:\Websites\htdocs\pitstopfoods\wp-content\themes\recipes\functions';
-} else {
-    $directory = get_stylesheet_directory_uri() . '/functions';
-}
+include_once 'Helper.php';
+include_once 'Utilities\\Environment.php';
 
-$entries = scandir( $directory );
+use Recipes\Helper;
+use Recipes\Utilities\Environment;
 
-foreach( $entries as $entry ) {
-    if ($entry !== '.' && $entry !== '..') {
-        $path = $directory . '/' . $entry;
-        if ( is_file( $path ) ) {
-            include_once $path;
-        }
-    }
-}
+$env = new Environment(wp_environment);
+$directory = $env->get();
 
-
-
-function register_new_widgets( $widget_manager ) {
-
-	require_once( __DIR__ . '/widgets/post-loop.php' );
-
-	$widget_manager->register( new \Elementor_Post_Widget() );
-
-}
-add_action( 'elementor/widgets/register', 'register_new_widgets' );
-
+Helper::entry($directory);

@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 /**
- * Elementor oEmbed Widget.
+ * Elementor Recipes Grid Widget.
  *
  * Elementor widget that creates a WP loop with the latest recipes posts
  *
@@ -51,6 +51,18 @@ class Elementor_Post_Widget extends \Elementor\Widget_base {
 			]
 		);
 
+		$this->add_control(
+			'size',
+			[
+				'type' => \Elementor\Controls_Manager::NUMBER,
+				'label' => esc_html__( 'Number of Slides', 'textdomain' ),
+				'placeholder' => '4',
+				'min' => 4,
+				'max' => 16,
+				'step' => 1,
+				'default' => 4,
+			]
+		);
 		$this->end_controls_section();
 
 	}
@@ -65,9 +77,11 @@ class Elementor_Post_Widget extends \Elementor\Widget_base {
 	 */
 	protected function render() {
 
+        $settings = $this->get_settings_for_display();
+
         $args = array(
             'post_type' => 'recipes',
-            'posts_per_page' => 8,
+            'posts_per_page' => $settings['size'],
             'order' => 'ASC',
             'orderby' => 'date',
     

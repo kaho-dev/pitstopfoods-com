@@ -18,7 +18,7 @@ function related_recipes_widget() {
         'category__in'   => $cat_ids,
         'post_type'      => $current_post_type,
         'post__not_in'    => array($post_id),
-        'posts_per_page'  => '4',
+        'posts_per_page'  => '8',
         'orderby' => 'rand'
 
 

@@ -3,11 +3,19 @@
 <div class="container pt-5 pb-5">
     <?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
 
-        <h1 class="text-center" ><?php the_title(); ?></h1>
+        <h1 class="text-left" ><?php the_title(); ?></h1>
 
         <div class="row mt-5">
+            <div class="col-12 col-md-12 d-flex justify-content-center">
+                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'full' ); ?>
+                <img src="<?php echo $image[0] ?>" alt="<?php the_title() ?>" class="img-fluid" />
+            </div>
+        </div>
+
+        <div class="row mt-5 mb-5">
+
             <div class="col-12 col-md-4">
-                <h3>Ingredients list</h3>
+                <h3>Ingredients</h3>
                 <ol class="list-group list-group-numbered">
                 <?php for ($i = 1; $i < 21; $i++) : ?>
                     <?php if ( get_field( "ingred_$i", get_the_id() ) ) : ?>
@@ -20,22 +28,18 @@
                 <?php endfor; ?>
                 </ol>
             </div>
-            <div class="col-12 col-md-8">
-                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'full' ); ?>
-                <img src="<?php echo $image[0] ?>" alt="<?php the_title() ?>" class="img-fluid" />
-            </div>
-        </div>
 
-        <div class="row mt-5 mb-5">
-            <h2>Instructions</h2>
-            <p><?php the_content(); ?></p>
+            <div class="col-12 col-md-8">
+                <h2>Instructions</h2>
+                <p><?php the_content(); ?></p>
+            </div>
         </div>
 
         <?php endwhile; else: ?>
             <p>sorry, no posts found</p>
     <?php endif; ?>
 
-    <h2 class="mt-3">Other Recipes you may be interested in</h2>
+    <h2 class="mt-3">You might also like</h2>
     <?php related_recipes_widget() ?>
 
 </div>

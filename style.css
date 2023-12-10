@@ -5,12 +5,17 @@ Description:  Recipes theme based on Astra
 Author:       Kaho Chan
 Author URI:   http://example.com
 Template:     astra
-Version:      1.0.2
+Version:      1.0.3
 License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
 Text Domain:  Recipes Theme
 */
+
+h1, h2, h3, h4, h5, h6, p, a, ul, li {
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+}
 
 ol {
     margin: 0;
@@ -20,16 +25,16 @@ ul {
     margin: 0;
 }
 
+h1 {
+    font-size: 60px;
+}
+
 h3 {
     font-size: 24px;
 }
 
 a {
     text-decoration: none;;
-}
-
-p {
-    font-family: 'Open Sans';
 }
 
 
