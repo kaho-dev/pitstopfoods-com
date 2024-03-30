@@ -94,13 +94,15 @@ class Elementor_Post_Widget extends \Elementor\Widget_base {
             <?php if( $query->have_posts() ): while( $query->have_posts() ): $query->the_post(); ?>
                 
                 <div class="col-12 col-md-3">
-                    <div class="bg-light home__recent-recipes">
-                        <a href="<?php the_permalink() ?>">
-                            <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ) ); ?>
-                            <img src="<?php echo $image[0] ?>" alt="<?php the_title() ?>" class="img-fluid" />
-                            <h3 class="p-3"><?php the_title() ?></h3>
-                        </a>
-                    </div>
+					<a href="<?php the_permalink() ?>">
+						<div class="home__recent-recipes__container">
+							<div class="bg-light home__recent-recipes">
+								<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ) ); ?>
+								<img src="<?php echo $image[0] ?>" alt="<?php the_title() ?>" class="img-fluid" />
+							</div>
+							<h3 class="p-3"><?php the_title() ?></h3>
+						</div>	
+					</a>
                 </div>    
     
                 <?php endwhile; ?>

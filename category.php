@@ -55,8 +55,10 @@
                         <div class="category__recipe-card">
                             <a href="<?php the_permalink() ?>">
                                 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ) ); ?>
-                                <img src="<?php echo $image[0] ?>" alt="<?php the_title() ?>" class="img-fluid" />
-                                <div class="category__card-text bg-light p-3">
+                                <div class="category__container-image">
+                                    <img src="<?php echo $image[0] ?>" alt="<?php the_title() ?>" class="img-fluid" />
+                                </div>
+                                <div class="category__card-text pt-3">
                                 <h3><?php the_title() ?></h3>
                                 </div>
                             </a>

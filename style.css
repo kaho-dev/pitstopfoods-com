@@ -41,17 +41,36 @@ a {
 /***********************************************************************/
 /* HomePage */
 /***********************************************************************/
-.home__food-card:hover {
-	box-shadow: 4px 4px #da3a24;
+/* .home__food-card {
+    overflow:hidden;
+} */
+
+.home__food-card .elementor-widget-container,
+.home__recent-recipes {
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.home__recent-recipes h3 {
+.home__food-card img,
+.home__recent-recipes img {
+    transition: transform 0.8s ease;
+}
+
+.home__food-card img:hover,
+.home__recent-recipes img:hover {
+	transform: scale(1.1);
+}
+
+.home__food-card:hover h3 {
+    color:#C71313!important;
+}
+
+.home__recent-recipes__container h3 {
     font-size:20px;
-    color: #C71313;
 }
 
-.home__recent-recipes:hover {
-    box-shadow: 4px 4px #da3a24;
+.home__recent-recipes__container:hover h3 {
+    color: #C71313;
 }
 
 
@@ -65,12 +84,10 @@ a {
 
 .recipes__recipe-card h3{
     font-size: 20px;
-    color: #C71313;
 }
 
-
-.recipes__recipe-card:hover {
-    box-shadow: 4px 4px #da3a24;
+.recipes__related:hover h3 {
+    color:#C71313;
 }
 
 .recipes__related img {
@@ -83,15 +100,33 @@ a {
     border-bottom-right-radius: 3px;
 }
 
-.recipes__related:hover {
-    box-shadow: 4px 4px #da3a24;
+.recipes__related__img {
+    overflow:hidden;
+    border-radius:8px;
 }
+
+.recipes__related img {
+    transition: transform 0.8s ease;
+}
+
+.recipes__related img:hover {
+    transform: scale(1.1);
+} 
 
 .recipes__related h3 {
-    font-size:18px;
-    color: #C71313;
+    font-size:20px;
 }
 
+.recipes__might-like {
+    padding-left: 12px;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 767px) {
+    .recipes__main-title {
+        font-size: 30px;
+    }
+}
 
 
 
@@ -101,19 +136,27 @@ a {
 
 .category__recipe-card h3 {
     font-size:20px;
-    color: #C71313;
 }
 
-.category__recipe-card:hover {
-    box-shadow: 4px 4px #da3a24;
+.category__recipe-card:hover h3 {
+    color:#C71313;
+}
+
+.category__container-image {
+    overflow:hidden;
+    border-radius: 8px;
 }
 
 .category__recipe-card img {
-    border-radius: 8px 8px 0 0;
+    transition: transform 0.8s ease;
+}
+
+.category__recipe-card img:hover {
+    transform: scale(1.05);
 }
 
 .category__card-text {
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 8px 0;
 }
 
 div.swiper-button-next:after, 

@@ -18,8 +18,8 @@ class Helper
         $entries = scandir( $directory );
         foreach( $entries as $key => $entry ) {
             if ( !in_array( $entry, array(".","..") ) ) {
-                if ( is_dir( $directory . '/' . $entry ) ) {
-                    $results[$entry] = self::scanDirectory( $directory . $entry . '\\' );
+                if ( is_dir( $directory . DIRECTORY_SEPARATOR . $entry ) ) {
+                    $results[$entry] = self::scanDirectory( $directory . $entry . DIRECTORY_SEPARATOR );
                 } else {
                     $results[] = $directory . $entry;
                 }

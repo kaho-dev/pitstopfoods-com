@@ -25,19 +25,23 @@ function related_recipes_widget() {
      );
 
     $related_cats_post = new WP_Query( $query_args ); ?>
-    <div class="container px-4">
+    <div class="container mt-3">
         <div class="row">
             
             <?php if($related_cats_post->have_posts()):
                 while($related_cats_post->have_posts()): $related_cats_post->the_post(); ?>
                     
-                    <div class="col-3">
+                    <div class="col-12 col-md-3 mb-5">
                         <div class="recipes__related">
                             <a href="<?php the_permalink(); ?>">
-                                <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'full' ); ?>
-                                <img src="<?php echo $image[0] ?>" alt="<?php the_title() ?>" class="img-fluid" />
-                                <div class="bg-light p-4">
-                                <h3><?php the_title(); ?></h3>
+                                <div class="recipes__related__img">
+                                    <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'full' ); ?>
+                                    <img src="<?php echo $image[0] ?>" alt="<?php the_title() ?>" class="img-fluid" />
+                                </div>
+                                <div class="recipes__related__text">
+                                    <div class="pt-3">
+                                        <h3><?php the_title(); ?></h3>
+                                    </div>
                                 </div>
                             </a>
                         </div>
