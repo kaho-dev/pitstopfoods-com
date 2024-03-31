@@ -1,7 +1,7 @@
 <?php
 
 include_once 'Helper.php';
-include_once 'Utilities\\Environment.php';
+include_once 'Utilities/Environment.php';
 
 use Recipes\Helper;
 use Recipes\Utilities\Environment;

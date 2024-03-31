@@ -14,7 +14,7 @@ function get_category_links_sidebar($categories): void {
 
         if ( $category->name === 'Uncategorized' ) continue;
 
-        if ( $category->name === 'Food' ) continue;
+        if ( $category->name === 'Foods' ) continue;
 
         if ( $category->name === null  ) continue;
 
