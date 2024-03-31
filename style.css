@@ -5,7 +5,7 @@ Description:  Recipes theme based on Astra
 Author:       Kaho Chan
 Author URI:   http://example.com
 Template:     astra
-Version:      1.0.3
+Version:      1.1.0
 License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
@@ -138,11 +138,14 @@ a {
     font-size:20px;
 }
 
-.category__recipe-card:hover h3 {
+.category__recipe-card:hover h3,
+.category__recipe-container:hover h3 {
     color:#C71313;
 }
 
-.category__container-image {
+
+.category__container-image,
+.category__recipe-card {
     overflow:hidden;
     border-radius: 8px;
 }

@@ -8,20 +8,19 @@
  */
 function get_category_links_sidebar($categories): void {
 
-    for($i = 0; $i < (count($categories)); $i++) {
+    foreach($categories as $category) {
 
-        if ($categories[$i] == null);
+        if ($category == null);
 
-        if ( $categories[$i]->name === 'Uncategorized' ) continue;
+        if ( $category->name === 'Uncategorized' ) continue;
 
-        if ( $categories[$i]->name === 'Food' ) continue;
+        if ( $category->name === 'Food' ) continue;
 
-        if ( $categories[$i]->name === null  ) continue;
+        if ( $category->name === null  ) continue;
 
-        echo '<a href="'. get_home_url() .'/'. strtolower( $categories[$i]->name ) 
+        echo '<a href="'. get_home_url() .'/'. strtolower( $category->name ) 
         .'" class="list-group-item list-group-item-action">'
-        . $categories[$i]->name .'</a>';
-
+        . $category->name .'</a>';
     }
 
 }

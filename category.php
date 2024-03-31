@@ -35,7 +35,7 @@
 <div class="row">
         <div class="col-12 col-md-3">
 
-            <div>
+            <div class="mb-5">
                 <h3 class="text-center">Categories</h3>
                 <ul class="list-group recipes__category-list">
                     <a href="/recipes/" class="list-group-item list-group-item-action" >All</a>

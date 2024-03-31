@@ -20,9 +20,9 @@ class Environment
             case 'local':
                 return 'D:\wordpress\htdocs\pitstopfoods\wp-content\themes\recipes\functions\\';
             case 'development':
-                return 'dev.pitstopfoods.com/wp-content/themes/recipes/functions/';
+                return get_stylesheet_directory() . '/functions/';
             case 'production':
-                return 'pitstopfoods.com/wp-content/themes/recipes/functions/';
+                return get_stylesheet_directory() . '/functions/';
         }
     }
 
