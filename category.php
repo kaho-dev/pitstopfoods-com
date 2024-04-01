@@ -23,6 +23,8 @@
 
 <div class="container">
 
+<?php if( function_exists( 'aioseo_breadcrumbs' ) ) aioseo_breadcrumbs(); ?>
+
 <div class="row mt-3 d-flex justify-content-center">
 
     <div class="col-9 mb-4">

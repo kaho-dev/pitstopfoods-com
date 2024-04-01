@@ -5,7 +5,9 @@ $cats = get_recipe_categories();
 
 ?>
 
-<div class="container">
+<div class="container mt-3">
+
+    <?php if( function_exists( 'aioseo_breadcrumbs' ) ) aioseo_breadcrumbs(); ?>
 
     <div class="mt-3 mb-5 text-left">
         <h1 class="text-center">Recipes</h1>
