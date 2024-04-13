@@ -63,6 +63,20 @@ class Elementor_Post_Widget extends \Elementor\Widget_base {
 				'default' => 4,
 			]
 		);
+
+		$this->add_control(
+			'post_type',
+			[
+				'label'   => esc_html__( 'Post Type', 'elementor-post-loop' ),
+				'type'    => \Elementor\Controls_Manager::SELECT,
+				'options' => [
+					'post'    => esc_html__( 'Posts', 'elementor-post-loop' ),
+					'recipes'  => esc_html__( 'Recipes', 'elementor-post-loop' ),
+				],
+				'default' => 'post',
+			]
+		);
+
 		$this->end_controls_section();
 
 	}
@@ -80,7 +94,7 @@ class Elementor_Post_Widget extends \Elementor\Widget_base {
         $settings = $this->get_settings_for_display();
 
         $args = array(
-            'post_type' => 'recipes',
+            'post_type' => $settings['post_type'],
             'posts_per_page' => $settings['size'],
             'order' => 'ASC',
             'orderby' => 'date',

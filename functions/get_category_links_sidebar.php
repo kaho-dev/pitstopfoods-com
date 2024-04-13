@@ -4,7 +4,7 @@
  *
  * Get all the category links for the sidebar
  * @param array
- * 
+ * @return void
  */
 function get_category_links_sidebar($categories): void {
 
@@ -18,7 +18,11 @@ function get_category_links_sidebar($categories): void {
 
         if ( $category->name === null  ) continue;
 
-        echo '<a href="'. get_home_url() .'/'. strtolower( $category->name ) 
+        $category_name = strtolower( $category->name );
+
+        $category_name = str_replace( ' ', '-', $category_name );
+
+        echo '<a href="'. get_home_url() .'/'. $category_name 
         .'" class="list-group-item list-group-item-action">'
         . $category->name .'</a>';
     }

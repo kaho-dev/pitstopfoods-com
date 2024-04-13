@@ -23,22 +23,21 @@
 
 <div class="container">
 
-<?php if( function_exists( 'aioseo_breadcrumbs' ) ) aioseo_breadcrumbs(); ?>
-
 <div class="row mt-3 d-flex justify-content-center">
 
     <div class="col-9 mb-4">
-        <h1 class="text-center"><?php single_cat_title(); ?> Recipes</h1>
-        <p><?php echo wp_kses_post( wpautop( $description ) ); ?></p>
+        <h1 class="text-center"><?php single_cat_title(); ?></h1>
     </div>
 
+    <p class="mt-3 mb-3"><?php echo wp_kses_post( wpautop( $description ) ); ?></p>
+    
 </div>
 
 <div class="row">
         <div class="col-12 col-md-3">
 
             <div class="mb-5">
-                <h3 class="text-center">Categories</h3>
+                <h2 class="text-center">Categories</h2>
                 <ul class="list-group recipes__category-list">
                     <a href="/recipes/" class="list-group-item list-group-item-action" >All</a>
 

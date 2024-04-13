@@ -7,11 +7,12 @@ $cats = get_recipe_categories();
 
 <div class="container mt-3">
 
-    <?php if( function_exists( 'aioseo_breadcrumbs' ) ) aioseo_breadcrumbs(); ?>
-
     <div class="mt-3 mb-5 text-left">
         <h1 class="text-center">Recipes</h1>
-        <p>Welcome to the Pitstop Foods Recipes page, your ultimate destination for culinary inspiration. Here, we celebrate the joy of cooking by offering a diverse collection of recipes that cater to different tastes and dietary preferences.</p>
+
+        <div class="pf__breadcrumbs"><?php if( function_exists( 'aioseo_breadcrumbs' ) ) aioseo_breadcrumbs(); ?></div>
+
+        <p class="mt-5">Welcome to the <a href="/">Pit Stop Foods</a> Recipes page, your ultimate destination for culinary inspiration. Here, we celebrate the joy of cooking by offering a diverse collection of recipes that cater to different tastes and dietary preferences.</p>
 
         <p>Our recipes are more than just a list of ingredients and steps. They are a journey through the world of flavors, a testament to the transformative power of food, and a tribute to the cultures and traditions that have shaped our palates.</p>
 
