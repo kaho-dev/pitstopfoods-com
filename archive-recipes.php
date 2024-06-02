@@ -6,11 +6,11 @@ $cats = get_recipe_categories();
 ?>
 
 <div class="container mt-3">
+	
+	<div class="pf__breadcrumbs"><?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb( '<p id="breadcrumbs">','</p>' ); } ?></div>
 
     <div class="mt-3 mb-5 text-left">
         <h1 class="text-center">Recipes</h1>
-
-        <div class="pf__breadcrumbs"><?php if( function_exists( 'aioseo_breadcrumbs' ) ) aioseo_breadcrumbs(); ?></div>
 
         <p class="mt-5">Welcome to the <a href="/">Pit Stop Foods</a> Recipes page, your ultimate destination for culinary inspiration. Here, we celebrate the joy of cooking by offering a diverse collection of recipes that cater to different tastes and dietary preferences.</p>
 
@@ -31,7 +31,7 @@ $cats = get_recipe_categories();
             <div class="mb-5">
                 <h3 class="text-center">Categories</h3>
                 <ul class="list-group category__category-list">
-                    <a href="http://pitstopfoods.test/recipes/" class="list-group-item list-group-item-action" >All</a>
+                    <a href="/recipes/" class="list-group-item list-group-item-action" >All</a>
 
                     <?php get_category_links_sidebar($cats) ?>
                 

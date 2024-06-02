@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
 <div class="container pt-5 pb-5">
-
+	
+	<div class="pf__breadcrumbs"><?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb( '<p id="breadcrumbs">','</p>' ); } ?></div>
 
     <?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
 
@@ -33,7 +34,6 @@
             </div>
 
             <div class="col-12 col-md-8">
-                <h2>Instructions</h2>
                 <p><?php the_content(); ?></p>
             </div>
         </div>
@@ -44,6 +44,15 @@
 
     <h2 class="mt-3 recipes__might-like">You might also like</h2>
     <?php related_recipes_widget() ?>
+	
+	<div id="comments">
+        <?php
+        // Check if comments are open or if there are comments
+        if ( comments_open() || get_comments_number() ) {
+            comments_template();
+        }
+        ?>
+    </div>
 
 </div>
 <?php get_footer(); ?>

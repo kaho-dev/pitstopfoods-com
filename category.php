@@ -22,6 +22,8 @@
 
 
 <div class="container">
+	
+<div class="pf__breadcrumbs"><?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb( '<p id="breadcrumbs">','</p>' ); } ?></div>
 
 <div class="row mt-3 d-flex justify-content-center">
 
